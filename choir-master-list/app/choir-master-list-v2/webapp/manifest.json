@@ -1,0 +1,136 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "choirmasterlistv2.choirmasterlistv2",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.13.1",
+      "toolsId": "2e465876-c8d6-40fc-aea3-9edc7e85a5fa"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/choir/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.123.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "choirmasterlistv2.choirmasterlistv2.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ChoirMember_Chorale_ViewList",
+          "target": "ChoirMember_Chorale_ViewList"
+        },
+        {
+          "pattern": "ChoirMember_Chorale_View({key}):?query:",
+          "name": "ChoirMember_Chorale_ViewObjectPage",
+          "target": "ChoirMember_Chorale_ViewObjectPage"
+        }
+      ],
+      "targets": {
+        "ChoirMember_Chorale_ViewList": {
+          "type": "Component",
+          "id": "ChoirMember_Chorale_ViewList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ChoirMember_Chorale_View",
+              "variantManagement": "Page",
+              "navigation": {
+                "ChoirMember_Chorale_View": {
+                  "detail": {
+                    "route": "ChoirMember_Chorale_ViewObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ChoirMember_Chorale_ViewObjectPage": {
+          "type": "Component",
+          "id": "ChoirMember_Chorale_ViewObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ChoirMember_Chorale_View"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}

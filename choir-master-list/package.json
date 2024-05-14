@@ -1,0 +1,35 @@
+{
+  "name": "choir-master-list",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.120.8"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-choir-master-list": "cds watch --open choir-master-list/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-choir-master-list-v2": "cds watch --open choir-master-list-v2/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/choir-master-list",
+    "app/choir-master-list-v2"
+  ],
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
+    }
+  }
+}

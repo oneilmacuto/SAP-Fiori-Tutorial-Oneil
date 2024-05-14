@@ -1,0 +1,16 @@
+ID;Name;ChoirId;VocalSection;Status;GrandChoirMember
+1;Oneil Macuto;1;Tenor;Active;Y
+2;Jove B;2;Tenor;Active;Y
+3;Dennis P;3;Bass;Active;Y
+4;Nino G;4;Bass;Active;Y
+5;Darniel H;5;Bass;Active;Y
+6;Beth C;6;Alto;Active;Y
+7;Nica J;1;Soprano;Active;Y
+8;Erick C;1;Bass;Active;Y
+9;Val B;2;Tenor;Active;Y
+10;Ella G;2;Alto;Active;Y
+11;Zonite Q;1;Tenor;Active;N
+12;Ken H;3;Tenor;Active;N
+13;Tristan L;6;Tenor;Active;N
+14;Miro L;5;Tenor;Active;Y
+15;Frenzy M;4;Alto;Active;Y
