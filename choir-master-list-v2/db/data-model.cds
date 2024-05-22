@@ -22,6 +22,8 @@ using { managed, cuid } from '@sap/cds/common';
     JuniorChoir: Integer;
     StatusCrit: Integer;
     Age: Integer;
+    Lvl: String;
+    Trainings              : Composition of many TrainingSet on Trainings.Lvl = Lvl;
   }
 
   entity Status : managed {
@@ -33,6 +35,11 @@ using { managed, cuid } from '@sap/cds/common';
     key ID: String;
     VocalSection: String;
     VocalRange: String;
+  }
+
+  entity TrainingSet : managed {
+    Lvl: String;
+    Trainings: String;
   }
 
   // entity ChoirMember_Chorale_View as

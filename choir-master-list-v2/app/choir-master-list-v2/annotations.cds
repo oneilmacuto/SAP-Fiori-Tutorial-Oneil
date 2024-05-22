@@ -106,7 +106,8 @@ annotate service.ChoirMembers with @(
 		],
 		Facets: [
 			{$Type: 'UI.ReferenceFacet', Label: 'Main', Target: '@UI.FieldGroup#Main'},
-            {$Type : 'UI.ReferenceFacet', Label: 'Chorale Details', Target: '@UI.FieldGroup#Choirs'}
+            {$Type: 'UI.ReferenceFacet', Label: 'Chorale Details', Target: '@UI.FieldGroup#Choirs'},
+            {$Type: 'UI.ReferenceFacet', Label : 'Trainings', Target: 'Trainings/@UI.LineItem',}
 		],
 		FieldGroup#Main: {
 			Data: [
@@ -156,8 +157,9 @@ annotate service.Choirs with @(
     UI: {
         LineItem  : [
             {
-                Value: YearFounded,
-                Label: 'Choir Founded In/From a Junior Choir?'
+                $Type : 'UI.DataField',
+                Value : ChoirName,
+                Label : 'Choir Name',
             }
         ],
         Facets  : [
@@ -171,5 +173,19 @@ annotate service.Choirs with @(
                 {Value: Acronym}
 			]
 		}
+    }
+);
+
+annotate service.TrainingSet with @(
+    UI: {
+        LineItem  : [
+            {
+                Value: Lvl,
+                Label : 'Level',
+            },
+            {
+                Value : Trainings,
+            },
+        ],
     }
 );
